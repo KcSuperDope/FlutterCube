@@ -1,0 +1,141 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.ganyuan.cubestation_flutter"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="33" />
+10    <!--
+11         The INTERNET permission is required for development. Specifically,
+12         the Flutter tool needs it to communicate with the running application
+13         to allow setting breakpoints, to provide hot reload, etc.
+14    -->
+15    <uses-permission android:name="android.permission.INTERNET" />
+15-->/Users/lilinjun/cubestation/android/app/src/main/AndroidManifest.xml:34:5-66
+15-->/Users/lilinjun/cubestation/android/app/src/main/AndroidManifest.xml:34:22-64
+16    <!--
+17     New Bluetooth permissions in Android 12
+18           https://developer.android.com/about/versions/12/features/bluetooth-permissions
+19    -->
+20    <uses-permission
+20-->/Users/lilinjun/cubestation/android/app/src/main/AndroidManifest.xml:37:5-119
+21        android:name="android.permission.BLUETOOTH_SCAN"
+21-->/Users/lilinjun/cubestation/android/app/src/main/AndroidManifest.xml:37:22-70
+22        android:usesPermissionFlags="neverForLocation" />
+22-->/Users/lilinjun/cubestation/android/app/src/main/AndroidManifest.xml:37:71-117
+23    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" /> <!-- Request legacy Bluetooth permissions on older devices. -->
+23-->/Users/lilinjun/cubestation/android/app/src/main/AndroidManifest.xml:38:5-76
+23-->/Users/lilinjun/cubestation/android/app/src/main/AndroidManifest.xml:38:22-73
+24    <uses-permission
+24-->/Users/lilinjun/cubestation/android/app/src/main/AndroidManifest.xml:41:5-95
+25        android:name="android.permission.BLUETOOTH"
+25-->/Users/lilinjun/cubestation/android/app/src/main/AndroidManifest.xml:41:22-65
+26        android:maxSdkVersion="30" />
+26-->/Users/lilinjun/cubestation/android/app/src/main/AndroidManifest.xml:41:66-92
+27    <uses-permission
+27-->/Users/lilinjun/cubestation/android/app/src/main/AndroidManifest.xml:42:5-101
+28        android:name="android.permission.BLUETOOTH_ADMIN"
+28-->/Users/lilinjun/cubestation/android/app/src/main/AndroidManifest.xml:42:22-71
+29        android:maxSdkVersion="30" />
+29-->/Users/lilinjun/cubestation/android/app/src/main/AndroidManifest.xml:42:72-98
+30    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- required for API 23 - 30 -->
+30-->/Users/lilinjun/cubestation/android/app/src/main/AndroidManifest.xml:43:5-79
+30-->/Users/lilinjun/cubestation/android/app/src/main/AndroidManifest.xml:43:22-76
+31    <uses-permission-sdk-23
+31-->[:nordic_dfu] /Users/lilinjun/cubestation/build/nordic_dfu/intermediates/merged_manifest/debug/AndroidManifest.xml:18:5-20:38
+32        android:name="android.permission.ACCESS_COARSE_LOCATION"
+32-->[:nordic_dfu] /Users/lilinjun/cubestation/build/nordic_dfu/intermediates/merged_manifest/debug/AndroidManifest.xml:19:9-65
+33        android:maxSdkVersion="30" />
+33-->[:nordic_dfu] /Users/lilinjun/cubestation/build/nordic_dfu/intermediates/merged_manifest/debug/AndroidManifest.xml:20:9-35
+34    <uses-permission-sdk-23
+34-->[:nordic_dfu] /Users/lilinjun/cubestation/build/nordic_dfu/intermediates/merged_manifest/debug/AndroidManifest.xml:21:5-23:38
+35        android:name="android.permission.ACCESS_FINE_LOCATION"
+35-->[:nordic_dfu] /Users/lilinjun/cubestation/build/nordic_dfu/intermediates/merged_manifest/debug/AndroidManifest.xml:22:9-63
+36        android:maxSdkVersion="30" />
+36-->[:nordic_dfu] /Users/lilinjun/cubestation/build/nordic_dfu/intermediates/merged_manifest/debug/AndroidManifest.xml:23:9-35
+37
+38    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+38-->[:nordic_dfu] /Users/lilinjun/cubestation/build/nordic_dfu/intermediates/merged_manifest/debug/AndroidManifest.xml:32:5-77
+38-->[:nordic_dfu] /Users/lilinjun/cubestation/build/nordic_dfu/intermediates/merged_manifest/debug/AndroidManifest.xml:32:22-74
+39
+40    <permission
+40-->[androidx.core:core:1.10.1] /Users/lilinjun/.gradle/caches/transforms-3/9503294a02322add631c8cf5cfb5e895/transformed/core-1.10.1/AndroidManifest.xml:22:5-24:47
+41        android:name="com.ganyuan.cubestation_flutter.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+41-->[androidx.core:core:1.10.1] /Users/lilinjun/.gradle/caches/transforms-3/9503294a02322add631c8cf5cfb5e895/transformed/core-1.10.1/AndroidManifest.xml:23:9-81
+42        android:protectionLevel="signature" />
+42-->[androidx.core:core:1.10.1] /Users/lilinjun/.gradle/caches/transforms-3/9503294a02322add631c8cf5cfb5e895/transformed/core-1.10.1/AndroidManifest.xml:24:9-44
+43
+44    <uses-permission android:name="com.ganyuan.cubestation_flutter.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+44-->[androidx.core:core:1.10.1] /Users/lilinjun/.gradle/caches/transforms-3/9503294a02322add631c8cf5cfb5e895/transformed/core-1.10.1/AndroidManifest.xml:26:5-97
+44-->[androidx.core:core:1.10.1] /Users/lilinjun/.gradle/caches/transforms-3/9503294a02322add631c8cf5cfb5e895/transformed/core-1.10.1/AndroidManifest.xml:26:22-94
+45
+46    <application
+47        android:name="android.app.Application"
+48        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+48-->[androidx.core:core:1.10.1] /Users/lilinjun/.gradle/caches/transforms-3/9503294a02322add631c8cf5cfb5e895/transformed/core-1.10.1/AndroidManifest.xml:28:18-86
+49        android:debuggable="true"
+50        android:icon="@mipmap/ic_launcher"
+51        android:label="CubeStation极速版" >
+52        <activity
+53            android:name="com.ganyuan.cubestation_flutter.MainActivity"
+54            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+55            android:exported="true"
+56            android:hardwareAccelerated="true"
+57            android:launchMode="singleTop"
+58            android:theme="@style/LaunchTheme"
+59            android:windowSoftInputMode="adjustResize" >
+60
+61            <!--
+62                 Specifies an Android theme to apply to this Activity as soon as
+63                 the Android process has started. This theme is visible to the user
+64                 while the Flutter UI initializes. After that, this theme continues
+65                 to determine the Window background behind the Flutter UI.
+66            -->
+67            <meta-data
+68                android:name="io.flutter.embedding.android.NormalTheme"
+69                android:resource="@style/NormalTheme" />
+70
+71            <intent-filter>
+72                <action android:name="android.intent.action.MAIN" />
+73
+74                <category android:name="android.intent.category.LAUNCHER" />
+75            </intent-filter>
+76        </activity>
+77        <!--
+78             Don't delete the meta-data below.
+79             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+80        -->
+81        <meta-data
+82            android:name="flutterEmbedding"
+83            android:value="2" />
+84
+85        <activity
+85-->[:url_launcher_android] /Users/lilinjun/cubestation/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-13:74
+86            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+86-->[:url_launcher_android] /Users/lilinjun/cubestation/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-74
+87            android:exported="false"
+87-->[:url_launcher_android] /Users/lilinjun/cubestation/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-37
+88            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+88-->[:url_launcher_android] /Users/lilinjun/cubestation/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-71
+89
+90        <service android:name="dev.steenbakker.nordicdfu.DfuService" />
+90-->[:nordic_dfu] /Users/lilinjun/cubestation/build/nordic_dfu/intermediates/merged_manifest/debug/AndroidManifest.xml:35:9-72
+90-->[:nordic_dfu] /Users/lilinjun/cubestation/build/nordic_dfu/intermediates/merged_manifest/debug/AndroidManifest.xml:35:18-69
+91
+92        <uses-library
+92-->[androidx.window:window:1.0.0-beta04] /Users/lilinjun/.gradle/caches/transforms-3/ad78abcc242028e8fa8379af6b3bd7f7/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+93            android:name="androidx.window.extensions"
+93-->[androidx.window:window:1.0.0-beta04] /Users/lilinjun/.gradle/caches/transforms-3/ad78abcc242028e8fa8379af6b3bd7f7/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+94            android:required="false" />
+94-->[androidx.window:window:1.0.0-beta04] /Users/lilinjun/.gradle/caches/transforms-3/ad78abcc242028e8fa8379af6b3bd7f7/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+95        <uses-library
+95-->[androidx.window:window:1.0.0-beta04] /Users/lilinjun/.gradle/caches/transforms-3/ad78abcc242028e8fa8379af6b3bd7f7/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+96            android:name="androidx.window.sidecar"
+96-->[androidx.window:window:1.0.0-beta04] /Users/lilinjun/.gradle/caches/transforms-3/ad78abcc242028e8fa8379af6b3bd7f7/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+97            android:required="false" />
+97-->[androidx.window:window:1.0.0-beta04] /Users/lilinjun/.gradle/caches/transforms-3/ad78abcc242028e8fa8379af6b3bd7f7/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+98    </application>
+99
+100</manifest>

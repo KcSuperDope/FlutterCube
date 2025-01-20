@@ -1,0 +1,288 @@
+syntax = "proto3"; 
+option java_package = "com.cube.protocol";
+option java_outer_classname = "LoginProto";
+import "code.proto";
+import "message.proto";
+package login;
+// 登录协议, 包括: login相关协议和心跳包
+// base 100
+
+// 心跳包
+// 10000
+message c2s_heartbeat {
+}
+
+// 10000
+message s2c_heartbeat {
+     int64 timestamp = 1;    // 时间戳 ms
+}
+
+
+// 游客登录
+// 10001
+message c2s_login_visitor {
+     string sMachineCode = 1;  //机器码
+	optional int32 iChannelID = 2;      // 渠道id
+}
+
+// 登录返回
+// 10001
+message s2c_login_visitor {
+     response_code eCode = 1;        // 状态码 0.正常 默认0
+}
+
+// 密码登录
+// 10002
+message c2s_login_password {
+    optional string sPhoneNum = 1;       // 手机号码(国家码+空格+手机号码 组成的字符串)
+    optional string sEmail    = 2;       // 邮箱
+     string sPassword = 3;       // 密码, md5加密后的
+     int32 iLoginTime = 4;       // 登录时间戳 秒
+	optional int32 iChannelID = 5;      // 渠道id
+}
+
+// 登录返回
+// 10002
+message s2c_login_password {
+     response_code eCode = 1;
+}
+
+// 获取登录验证码
+// 10003
+message c2s_login_get_v_code {
+    optional string sPhoneNum = 1;       // 手机号码(国家码+空格+手机号码 组成的字符串)
+    optional string sEmail    = 2;       // 邮箱
+}
+
+// 发送验证码返回
+// 10003
+message s2c_login_get_v_code {
+     response_code eCode = 1;        // 状态码 0.正常, 默认0
+}
+
+// 验证码登录(手机验证码或邮箱登录)
+// 10004
+message c2s_login_verify {
+    optional string sPhoneNum = 1;       // 手机号码(国家码+空格+手机号码 组成的字符串)
+    optional string sEmail    = 2;       // 邮箱
+     int32 iVCode     = 3;       // 验证码
+     string sMachineCode     = 4;       // 机器码
+	optional int32 iChannelID = 5;      // 渠道id
+}
+
+// 登录返回
+// 10004
+message s2c_login_verify {
+     response_code eCode = 1;        // 状态码 0.正常, 默认0
+}
+
+// 获取账号信息
+// 10005
+message c2s_login_acc_info {
+    optional string sPhoneNum = 1;       // 手机号码(国家码+空格+手机号码 组成的字符串)
+    optional string sEmail    = 2;       // 邮箱
+}
+
+// 返回账号信息
+// 10005
+message s2c_login_acc_info {
+    enum acc_state {
+        unregister = 0;     // 未注册
+        no_password = 1;    // 已注册无密码
+        has_password = 2;   // 已注册有密码
+    }
+     acc_state eState = 1;      // 账号状态
+     string sPhoneNum = 2;      // 手机号码(国家码+空格+手机号码 组成的字符串)
+     string sEmail    = 3;      // 邮箱
+}
+
+// 第三方开放授权登录(微信, QQ, Facebook)
+// 10006
+message c2s_login_oauth {
+     int32 iType = 1;       // 授权类型: 10.微信, 11.QQ ... 20.Facebook ...
+     string sOpenID = 2;    // OpenID/UnionID
+     string sJson = 3;      // 客户端上传的json信息
+     string sMachineCode     = 4;       // 机器码
+	optional int32 iChannelID = 5;      // 渠道id
+}
+
+// 10006
+message s2c_login_oauth {
+     response_code eCode = 1;   // 反馈
+}
+
+// 客户端断线重连
+// 10008
+message c2s_re_login {
+     int64 iUserID = 1;      // 玩家id
+     uint32 iToken = 2;      // token
+}
+
+// 客户端断线重连反馈
+// 10008
+message s2c_re_login {
+     response_code eCode = 1;        // 状态码 0:正常, 1:token错误
+     int64 iUserID = 2;      // 玩家id
+}
+
+// token登录
+// 10009
+message c2s_token_login {
+     int64 iUserID = 1;      // 玩家id
+     uint32 iToken = 2;      // token
+}
+
+// token重连反馈
+// 10009
+message s2c_token_login {
+     response_code eCode = 1;        // 状态码 0:正常, 1:token错误
+     int64 iUserID = 2;      // 玩家id
+}
+
+// // 注册
+// 获取注册验证码, 另一个发空字符串表示
+// 10010
+message c2s_register_get_v_code {
+    optional string sPhoneNum = 1;       // 手机号码(国家码+空格+手机号码 组成的字符串)
+    optional string sEmail    = 2;       // 邮箱
+}
+
+// 获取注册验证码返回
+// 10010
+message s2c_register_get_v_code {
+     response_code eCode = 1;        // 状态码 0.正常, 默认0
+}
+
+// 手机或邮箱注册
+// 10011
+message c2s_register {
+    optional string sPhoneNum = 1;       // 手机号码(国家码+空格+手机号码 组成的字符串)
+    optional string sEmail    = 2;       // 邮箱
+     string sPassword = 3;       // 密码
+     int32 iVCode     = 4;       // 验证码
+	optional int32 iChannelID = 5;      // 渠道id
+}
+
+// 手机或邮箱注册反馈
+// 10011
+message s2c_register {
+     response_code eCode = 1;
+}
+
+
+// 忘记密码获得验证码
+// 10012
+message c2s_forget_password_get_v_code {
+    optional string sPhoneNum = 1;       // 手机号码(国家码+空格+手机号码 组成的字符串)
+    optional string sEmail    = 2;       // 邮箱
+}
+
+// 忘记密码获得验证码反馈
+// 10012
+message s2c_forget_password_get_v_code {
+    // eCode错误信息
+    // fail: 客户端发上来的数据有错
+    // account_not_bind: 账号未绑定
+    // phone_num_wrong: 手机号码错误
+    // email_wrong: 邮箱错误
+     response_code eCode = 1;
+}
+
+// 通过验证码修改密码
+// 10013
+message c2s_forget_password {
+     int32 iVCode = 1;      // 验证码
+    optional string sPhoneNum = 2;  // 手机号码(国家码+空格+手机号码 组成的字符串)
+    optional string sEmail    = 3;  // 邮箱
+     string sPassword = 4;  // 密码
+}
+
+// 通过验证码修改密码反馈
+// 10013
+message s2c_forget_password {
+    // eCode错误信息
+    // v_code_expire: 验证码过期
+    // v_code_fail: 验证码错误
+     response_code eCode = 1;
+}
+
+// 登录基础信息
+// 10088
+message c2s_login_meta {
+
+}
+
+// 登录基础信息
+// 10088
+message s2c_login_meta {
+	optional msg_cube_show myCube = 1; 		//我的魔方外观信息
+}
+
+
+// 同socket重复登录提示
+// 10095
+message s2c_login_again {
+}
+
+// 玩家id登录
+// 10096
+message c2s_login_user_id {
+     int64 iUserID = 1;      // 玩家id
+}
+
+// 10096
+message s2c_login_user_id {
+     response_code eCode = 1;        // 状态码
+}
+
+// 服务端踢玩家提示
+// 10097
+message s2c_logout {
+    enum logout_type {
+        normal = 0;         // 一般是登录流程中一些错误
+        timeout = 1;        // 超时踢掉, 一般是心跳超时
+        self_kick = 2;      // 自己顶号踢掉
+        admin_kick = 3;     // 后台踢掉
+        server_busy = 4;    // 服务器繁忙踢掉
+        server_stop = 5;    // 关服
+        account_ban = 6;    // 账号已被封禁
+        server_starting = 7; // 服务器启动中
+        account_cancelled = 8; // 账号已注销
+    }
+     logout_type eType = 1;
+}
+
+// 登录成功反馈
+// 10098
+message s2c_login_success {
+     uint32 iToken   = 1;               // token, 可用于直接重连
+     int32 iExpireTime = 2;             // token过期时间
+     bool bSetPassword = 3;             // 是否已设置密码 0:否(未设置), 1:是(已设置)
+     msg_account_info mAccountInfo   = 4;   // 账号信息
+}
+
+// socket连接后首条协议, 同步一些信息
+// 10099
+message c2s_origin {
+     int32 iTimeZone = 1;       // 本地时区与UTC时间的秒数差(比如: UTC+8: 28800)
+     int32 iChannelID = 2;      // 渠道id
+     int32 iTerminalType = 3;   // 设备系统类型 1.Android, 2.IOS, 3.PC
+     string sTerminalName = 4;  // 设备型号名: xiaomi10 iPhoneX等
+     string sMachineCode = 5;   // 机器码
+    optional string iTerminalVersion = 6;   // 设备系统版本
+    optional string sTerminalVendor = 7;    // 设备厂商
+    optional string sTerminalSize = 8;      // 设备屏幕尺寸: 1080*900
+    optional string sTerminalCPU = 9;       // 设备CPU型号
+	optional string clientVersion = 10;       // 客户端版本号
+	optional int32 networkType = 11;       // 网络类型-1无网络 0移动网络 1wifi
+}
+
+// 10099
+message s2c_origin {
+     int64 timestamp = 1;       // 时间戳 ms
+     string sIPCountry = 2;     // IP所在国家
+     string sIPProvince = 3;    // IP所在省份
+     string sIPCity = 4;        // IP所在城市
+    optional string sIp = 5;            // IP地址
+}
+

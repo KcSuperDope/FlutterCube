@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "/Users/lilinjun/cubestation/build/nordic_dfu/intermediates/merged_res/release/drawable-xhdpi-v4/notification_bg_normal.9.png",
+        "source": "/Users/lilinjun/.gradle/caches/transforms-3/025c8cbf893de551222b9cedbfbe126a/transformed/core-1.9.0/res/drawable-xhdpi-v4/notification_bg_normal.9.png"
+    },
+    {
+        "merged": "/Users/lilinjun/cubestation/build/nordic_dfu/intermediates/merged_res/release/drawable-xhdpi-v4/notify_panel_notification_icon_bg.png",
+        "source": "/Users/lilinjun/.gradle/caches/transforms-3/025c8cbf893de551222b9cedbfbe126a/transformed/core-1.9.0/res/drawable-xhdpi-v4/notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "/Users/lilinjun/cubestation/build/nordic_dfu/intermediates/merged_res/release/drawable-xhdpi-v4/notification_bg_low_normal.9.png",
+        "source": "/Users/lilinjun/.gradle/caches/transforms-3/025c8cbf893de551222b9cedbfbe126a/transformed/core-1.9.0/res/drawable-xhdpi-v4/notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "/Users/lilinjun/cubestation/build/nordic_dfu/intermediates/merged_res/release/drawable-xhdpi-v4/ic_stat_notify_dfu.png",
+        "source": "/Users/lilinjun/.gradle/caches/transforms-3/1a936ff460f552cab79d4d97dda67ea0/transformed/jetified-dfu-2.3.0/res/drawable-xhdpi-v4/ic_stat_notify_dfu.png"
+    },
+    {
+        "merged": "/Users/lilinjun/cubestation/build/nordic_dfu/intermediates/merged_res/release/drawable-xhdpi-v4/notification_bg_normal_pressed.9.png",
+        "source": "/Users/lilinjun/.gradle/caches/transforms-3/025c8cbf893de551222b9cedbfbe126a/transformed/core-1.9.0/res/drawable-xhdpi-v4/notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "/Users/lilinjun/cubestation/build/nordic_dfu/intermediates/merged_res/release/drawable-xhdpi-v4/ic_action_notify_cancel.png",
+        "source": "/Users/lilinjun/.gradle/caches/transforms-3/1a936ff460f552cab79d4d97dda67ea0/transformed/jetified-dfu-2.3.0/res/drawable-xhdpi-v4/ic_action_notify_cancel.png"
+    },
+    {
+        "merged": "/Users/lilinjun/cubestation/build/nordic_dfu/intermediates/merged_res/release/drawable-xhdpi-v4/notification_bg_low_pressed.9.png",
+        "source": "/Users/lilinjun/.gradle/caches/transforms-3/025c8cbf893de551222b9cedbfbe126a/transformed/core-1.9.0/res/drawable-xhdpi-v4/notification_bg_low_pressed.9.png"
+    }
+]

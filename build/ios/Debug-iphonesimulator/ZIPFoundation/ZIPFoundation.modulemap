@@ -1,0 +1,12 @@
+module ZIPFoundation {
+  umbrella header "ZIPFoundation-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+
+module ZIPFoundation.Swift {
+  header "/Users/lilinjun/cubestation/build/ios/Debug-iphonesimulator/ZIPFoundation/Swift Compatibility Header/ZIPFoundation-Swift.h"
+  requires objc
+}

@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/Users/lilinjun/cubestation/build/url_launcher_android/intermediates/merged_res/release/drawable-anydpi-v21/ic_call_answer_video_low.xml",
+        "source": "/Users/lilinjun/.gradle/caches/transforms-3/9503294a02322add631c8cf5cfb5e895/transformed/core-1.10.1/res/drawable-anydpi-v21/ic_call_answer_video_low.xml"
+    },
+    {
+        "merged": "/Users/lilinjun/cubestation/build/url_launcher_android/intermediates/merged_res/release/drawable-anydpi-v21/ic_call_answer.xml",
+        "source": "/Users/lilinjun/.gradle/caches/transforms-3/9503294a02322add631c8cf5cfb5e895/transformed/core-1.10.1/res/drawable-anydpi-v21/ic_call_answer.xml"
+    },
+    {
+        "merged": "/Users/lilinjun/cubestation/build/url_launcher_android/intermediates/merged_res/release/drawable-anydpi-v21/ic_call_answer_low.xml",
+        "source": "/Users/lilinjun/.gradle/caches/transforms-3/9503294a02322add631c8cf5cfb5e895/transformed/core-1.10.1/res/drawable-anydpi-v21/ic_call_answer_low.xml"
+    },
+    {
+        "merged": "/Users/lilinjun/cubestation/build/url_launcher_android/intermediates/merged_res/release/drawable-anydpi-v21/ic_call_decline.xml",
+        "source": "/Users/lilinjun/.gradle/caches/transforms-3/9503294a02322add631c8cf5cfb5e895/transformed/core-1.10.1/res/drawable-anydpi-v21/ic_call_decline.xml"
+    },
+    {
+        "merged": "/Users/lilinjun/cubestation/build/url_launcher_android/intermediates/merged_res/release/drawable-anydpi-v21/ic_call_decline_low.xml",
+        "source": "/Users/lilinjun/.gradle/caches/transforms-3/9503294a02322add631c8cf5cfb5e895/transformed/core-1.10.1/res/drawable-anydpi-v21/ic_call_decline_low.xml"
+    },
+    {
+        "merged": "/Users/lilinjun/cubestation/build/url_launcher_android/intermediates/merged_res/release/drawable-anydpi-v21/ic_call_answer_video.xml",
+        "source": "/Users/lilinjun/.gradle/caches/transforms-3/9503294a02322add631c8cf5cfb5e895/transformed/core-1.10.1/res/drawable-anydpi-v21/ic_call_answer_video.xml"
+    }
+]

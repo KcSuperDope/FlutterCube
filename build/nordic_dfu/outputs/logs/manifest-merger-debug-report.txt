@@ -1,0 +1,67 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml:1:1-30:12
+INJECTED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml:1:1-30:12
+INJECTED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml:1:1-30:12
+	package
+		ADDED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml:2:5-40
+		INJECTED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml
+		INJECTED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.BLUETOOTH
+ADDED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml:5:5-7:38
+	android:maxSdkVersion
+		ADDED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml:7:9-35
+	android:name
+		ADDED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml:6:9-52
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml:8:5-10:38
+	android:maxSdkVersion
+		ADDED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml:10:9-35
+	android:name
+		ADDED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml:9:9-58
+uses-permission-sdk-23#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml:13:5-15:38
+	android:maxSdkVersion
+		ADDED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml:15:9-35
+	android:name
+		ADDED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml:14:9-65
+uses-permission-sdk-23#android.permission.ACCESS_FINE_LOCATION
+ADDED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml:16:5-18:38
+	android:maxSdkVersion
+		ADDED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml:18:9-35
+	android:name
+		ADDED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml:17:9-63
+uses-permission#android.permission.BLUETOOTH_CONNECT
+ADDED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml:21:5-76
+	android:name
+		ADDED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml:21:22-73
+uses-permission#android.permission.BLUETOOTH_SCAN
+ADDED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml:24:5-73
+	android:name
+		ADDED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml:24:22-70
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml:25:5-77
+	android:name
+		ADDED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml:25:22-74
+application
+ADDED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml:27:5-29:19
+service#dev.steenbakker.nordicdfu.DfuService
+ADDED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml:28:9-47
+	android:name
+		ADDED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml:28:18-44
+uses-sdk
+INJECTED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml
+INJECTED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml
+INJECTED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml
+INJECTED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml
+		ADDED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml
+		INJECTED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml
+		ADDED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml
+		INJECTED from /Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/nordic_dfu-6.0.1/android/src/main/AndroidManifest.xml

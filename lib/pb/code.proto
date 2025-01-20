@@ -1,0 +1,207 @@
+syntax = "proto3"; 
+option java_package = "com.cube.protocol";
+option java_outer_classname = "CodeProto";
+// 返回码 本文件只有enum respond_code
+
+enum response_code {
+    // 基础提示
+    normal          = 0; // 正常
+    fail            = 1; // 失败
+
+    // 登录注册相关提示语
+    account_err             = 101; // 账号未注册
+    password_err            = 102; // 密码错误
+    token_err               = 103; // token错误
+    phone_num_used          = 104; // 手机已注册
+    email_used              = 105; // 邮箱已注册
+    nickname_illegal        = 106; // 存在非法字符
+    nickname_too_short      = 107; // 昵称过短
+    nickname_too_long       = 108; // 昵称过长
+    nickname_used           = 109; // 昵称已被使用
+    password_already_set    = 110; // 已设置密码
+    old_password_err        = 111; // 旧密码错误
+    already_bind_phone      = 112; // 已绑定手机
+    already_bind_email      = 113; // 已绑定邮箱
+    send_v_code_err         = 114; // 验证码发送失败
+    v_code_expire           = 115; // 验证码过期
+    v_code_fail             = 116; // 验证码错误
+    account_not_bind        = 117; // 账号未绑定
+    phone_num_wrong         = 118; // 手机号码错误
+    email_wrong             = 119; // 邮箱错误
+    can_not_register        = 132; // 无法注册
+
+    oauth_type_err          = 120; // 未开通该授权类型
+    oauth_resp_err          = 121; // 获取授权信息失败
+
+    not_elite               = 122; // 非精英测试玩家
+    elite_expire            = 123; // 精英测试已结束
+
+    content_too_long        = 124; // 内容过长
+
+    no_data                 = 125; // 无数据
+
+    time_out_of_sync        = 130; // 与服务器时间不同步
+    account_merge           = 131; // 请进行账号合并
+
+    // 好友、黑名单相关
+    is_friend    = 201; // 已经是好友
+    is_black     = 202; // 在对方黑名单中
+    not_apply    = 203; // 对方不在你的申请列表中
+    not_friend   = 204; // 对方不是你的好友
+    friend_limit = 205; // 好友数量超上限
+    black_limit  = 206; // 黑名单数量超上限
+    apply_limit  = 207; // 每日申请数量超上限
+    not_his_friend  = 208; // 不是他的好友
+
+    // 计时器
+    group_name_exist = 211;  // 计时器分组重名
+    mark_num_limit   = 212;  // 计时器收藏记录数量超出限制
+    group_num_limit  = 213;  // 计时器分组数量已达上限
+
+    // 房间 匹配 竞赛相关
+    in_room         = 221;      // 已经在房间内
+    no_room         = 222;      // 房间不存在
+    room_lock       = 223;      // 房间已锁定
+    room_full       = 224;      // 房间已满
+    not_master      = 225;      // 不是房主
+    invitee_offline = 226;      // 被邀请者不在线
+    not_all_ready   = 227;      // 有人未准备
+    not_member_enough = 228;    // 人数不足
+    in_comp         = 229;      // 已经在竞赛中
+    in_match        = 230;      // 已经在匹配中
+    room_in_comp    = 231;      // 房间已在竞赛中
+    site_not_empty  = 232;      // 位置上有人
+    duration_limit  = 233;      // 未达到最低成绩要求
+    no_right        = 234;      // 无权限进入房间
+
+    comp_not_open   = 235;      // 比赛未开赛
+    comp_end        = 236;      // 比赛已结束
+    exist_referee   = 237;      // 该裁判位已有人担任
+
+    not_in_match1v1 = 240;      // 不在1v1匹配中
+    match1v1_timeout = 241;     // 1v1匹配超时
+
+    not_in_match    = 242;      // 不在匹配中
+    match_timeout   = 243;      // 匹配超时
+    match_cd        = 244;      // 匹配限制中
+
+    forbid_sit_out  = 245;      // 不允许观战
+    not_in_comp     = 246;      // 对方不在竞赛中
+
+    period_err      = 247;      // 赛季错误
+    is_rewarded     = 248;      // 奖励已领取
+
+
+    time_trial_no_num = 250;    // 计时赛次数不足
+    password_illegal  = 251;    // 密码存在非法字符
+    // 公式练习
+    repository_limit = 260;     // 当前公式库公式数量已达上限
+
+
+    // 激活码
+    cd_key_active   = 300;      // 该功能已激活
+    cd_key_invalid  = 301;      // 激活码无效
+    cd_key_used     = 302;      // 激活码已被使用
+
+    // 邀请码
+    invitation_code_invalid = 303;  // 邀请码无效
+    invitation_code_used = 304;     // 邀请码已被使用
+
+
+    // 调查问卷
+    quest_un_commit = 306;      // 问卷未提交
+    quest_rewarded  = 307;      // 问卷奖励已领取
+
+    // 老玩家回归奖励
+    old_acc_rewarded = 310;     // 老玩家回归奖励已领取
+    not_old_acc      = 311;     // 你不是老玩家
+
+    // 聊天
+    chat_not_in_comp = 320;     // 不在竞赛中, 不能发弹幕
+    chat_not_in_room = 321;     // 不在房间中, 不能发弹幕
+    chat_mute        = 322;     // 禁言中
+
+    // 物品相关
+    score_not_enough = 330;     // 积分不足
+    bag_limit        = 331;     // 背包格子不足
+    shop_limit       = 332;     // 商品达到限购数量
+    cost_limit       = 333;     // 兑换消耗物品不足
+    item_not_enough  = 334;     // 物品不足
+    no_effect        = 335;     // 没有效果
+
+
+    // 兑换商店
+    exchange_code_invalid  = 351;      // 兑换码无效
+    exchange_code_used     = 352;      // 兑换码已被使用
+    exchange_code_limit    = 353;      // 今日兑换次数已达上限
+
+
+    // 活动
+    activity_not_reach  = 400;     // 未达成
+    activity_rewarded   = 401;     // 活动奖励已领取
+
+    // 设备相关
+    no_brake_through = 500;     // 学而思设备未突破
+
+    // 注销
+    not_in_closing  =  600; // 未申请注销
+    account_risk    =  601; // 账号风险
+    account_close   =  602; // 账号已注销
+    account_closing =  603; // 账号注销中
+
+    // 赛事
+    major_time_error = 610;     // 赛事时间有误
+    major_unauthorized = 611;   // 无权限操作
+    major_edit_forbid = 612;    // 部分信息不允许在当前阶段修改
+    major_info_required = 613;  // 部分赛事信息不能为空
+    major_num_limit = 614;      // 观看人数已达上限
+    major_not_start = 615;      // 房间比赛未开始
+    major_round_error = 616;    // 操作回合数有误
+    major_round_not_over = 617; // 房间当前回合未结束，无法操作
+    major_repeat_appeal = 618;  // 请勿重复提交本回合申诉
+    major_competitor_limit = 620;  // 非本房间选手请在房间比赛开始后进入
+    major_already_started = 621;  // 比赛已开始，无法进入
+
+    // 战队
+    team_name_edit_limit = 630;     // 战队改名限制中
+    team_not_join = 631;            // 未加入战队，无法操作
+    team_already_join = 632;        // 已加入战队，无法操作
+    team_repeat_request = 633;      // 请勿重复申请加入战队
+    team_target_no_exist = 634;     // 操作对象不存在
+    team_target_op_limit = 635;     // 对方当前状态不支持此操作
+    team_logout_not_enough = 636;   // 队长离线时间未达到条件
+    team_role_num_limit = 637;      // 成员数量已达上限
+    team_prepare_denied_join = 638; // 筹备阶段不允许申请加入战队
+    team_info_required = 639;       // 部分战队信息为空
+    team_cond_not_met = 640;        // 对方未达到加入条件
+    team_auto_reject = 641;         // 对方已经拒绝你的申请
+    team_invite_repeat = 642;       // 今日已邀请过
+    team_recruit_limit = 643;       // 战队招募信息修改限制中
+    team_join_cd = 644;             // 退出战队后24小时不能申请加入战队
+    team_impeach_notice_limit = 645; // 每日最多发送一次弹劾信息
+    team_reason_null = 646;          // 申请理由不能为空
+
+
+    // 系统错误码
+    db_err          = 900;      // 数据库错误
+    data_err        = 901;      // 发送数据错误
+    net_err         = 902;      // 网络错误
+    cd_err          = 903;      // 在cd中
+    data_null       = 904;      // 部分信息为空
+    permission_denied  = 905;   // 无权限操作
+    input_illegal   = 906;      // 输入信息违规
+}
+
+// 达成, 奖励等状态
+enum e_reach_state {
+    reach_state_not      = 0;    // 未达成
+    reach_state_reach    = 1;    // 已达成但未领奖
+    reach_state_rewarded = 2;    // 已达成已领奖
+}
+
+// 反馈发起
+enum e_respond_launch {
+    client_launch  = 0;     // 客户端发起的
+    server_launch  = 1;     // 服务端发起的
+
+}

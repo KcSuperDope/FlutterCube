@@ -1,0 +1,1 @@
+/Users/lilinjun/.pub-cache/hosted/pub.flutter-io.cn/app_settings-5.1.1/android/src/main/kotlin/com/spencerccf/app_settings/AppSettingsPlugin.kt

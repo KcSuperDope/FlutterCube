@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/Users/lilinjun/cubestation/build/nordic_dfu/intermediates/merged_res/release/layout/custom_dialog.xml",
+        "source": "/Users/lilinjun/.gradle/caches/transforms-3/025c8cbf893de551222b9cedbfbe126a/transformed/core-1.9.0/res/layout/custom_dialog.xml"
+    },
+    {
+        "merged": "/Users/lilinjun/cubestation/build/nordic_dfu/intermediates/merged_res/release/layout/notification_action_tombstone.xml",
+        "source": "/Users/lilinjun/.gradle/caches/transforms-3/025c8cbf893de551222b9cedbfbe126a/transformed/core-1.9.0/res/layout/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/Users/lilinjun/cubestation/build/nordic_dfu/intermediates/merged_res/release/layout/notification_action.xml",
+        "source": "/Users/lilinjun/.gradle/caches/transforms-3/025c8cbf893de551222b9cedbfbe126a/transformed/core-1.9.0/res/layout/notification_action.xml"
+    },
+    {
+        "merged": "/Users/lilinjun/cubestation/build/nordic_dfu/intermediates/merged_res/release/layout/notification_template_part_time.xml",
+        "source": "/Users/lilinjun/.gradle/caches/transforms-3/025c8cbf893de551222b9cedbfbe126a/transformed/core-1.9.0/res/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "/Users/lilinjun/cubestation/build/nordic_dfu/intermediates/merged_res/release/layout/notification_template_icon_group.xml",
+        "source": "/Users/lilinjun/.gradle/caches/transforms-3/025c8cbf893de551222b9cedbfbe126a/transformed/core-1.9.0/res/layout/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/Users/lilinjun/cubestation/build/nordic_dfu/intermediates/merged_res/release/layout/notification_template_part_chronometer.xml",
+        "source": "/Users/lilinjun/.gradle/caches/transforms-3/025c8cbf893de551222b9cedbfbe126a/transformed/core-1.9.0/res/layout/notification_template_part_chronometer.xml"
+    }
+]

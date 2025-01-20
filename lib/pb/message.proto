@@ -1,0 +1,394 @@
+syntax = "proto3"; 
+option java_package = "com.cube.protocol";
+option java_outer_classname = "MessageProto";
+// 各种公用message的文件
+
+
+// kv信息
+// key和value都为int的
+message msg_kv_ii {
+     int32 iK = 1;     // key
+     int32 iV = 2;     // value
+}
+
+message msg_kv_si {
+     string sK = 1;     // key
+     int32 iV = 2;     // value
+}
+
+// 界面物品对象
+message msg_award_item {
+   int32 id = 1; 				//id
+   int32 num = 2; 			//数量
+}
+
+// 玩家基础信息
+message msg_player_base_info {
+     int64 iUserID = 1;                 // 玩家id
+     string sNickName = 2;              // 玩家名
+     string sAvatar = 3;                // 头像
+     int32 iAvatarBoxID = 4;            // 头像框id
+     int32 iEnterEffectsID = 5;         // 进场特效id
+     int32 iRecoverEffectsID = 6;       // 复原特效id
+     int32 iFlagID = 7;                 // 旗帜id
+     string sSignature = 8;             // 签名
+     int32 iStatus = 9;                 // 状态: 0:离线, 1.断线重连中, 2.正常在线
+     string sCity = 10;                 // 城市
+     int32 iCompID = 11;                // 所在竞赛id
+    repeated msg_equipment mEquipments = 12;    // 设备列表
+    optional int32 iAccType = 13;               // 账号类型(0: 普通账号, 1: 内部gm权限账号 2:AI机器人号)
+    optional int32 iLogoutTime  = 14;           // 下线时间, 如果玩家正常在线, 则为0
+    optional int32 iCertificateType = 15;       // 认证类型
+    optional string sCertificateCont = 16;      // 认证内容
+    optional int32 iCup = 17;                   // 本赛季排位赛奖杯数
+    optional int32 iRoomID = 18;                // 所在房间id
+    optional bool bIsClose = 19;                // 是否已注销账号
+    optional string sMajorNickName = 20;        // 参赛名称
+    optional int32 iTeamID = 21;                // 战队ID
+    optional string sTeamName = 22;             // 战队名称
+}
+
+// 账号信息
+message msg_account_info{
+     int64 iUserID          = 1;        // 玩家id
+     string sPhone          = 2;        // 手机号码(国家码+空格+手机号码 组成的字符串)
+     int32 iPhoneBindTime   = 3;        // 手机绑定时间
+     string sEmail          = 4;        // 邮件
+     int32 iEmailBindTime   = 5;        // 邮箱绑定时间
+     bool bCloseStatus      = 6;        // 是否处于注销冷却期
+     string sAvatar         = 7;        // 头像
+    optional string sWechatName     = 8;        // 微信昵称
+    optional string sQQName         = 9;        // QQ昵称
+    optional string sFacebookName   = 10;       // Facebook昵称
+     int32 iCloseStatus     = 11;       // 注销状态(0未注销 1注销中 2已注销)
+     string sNickName       = 12;       // 玩家名
+     string sCountry        = 14;       // 国家
+     string sProvince       = 15;       // 省/州
+     int32 iRegTime         = 16;       // 注册时间
+    optional string sCity           = 17;       // 市
+}
+
+message msg_equipment {
+     string sType = 1;      // GANCU, GANRO, GANTI
+     string sModel = 2;     // GAN 356 iPlay ...
+    optional string sName = 3;      // GAN-8ff48
+    optional string sAddress = 4;   // 物理地址
+    optional string sVersion = 5;   // 版本号
+	optional int32 affirmTime = 6;   // 认证时间 时间戳 秒
+}
+
+// 玩家id和玩家名
+message msg_player_name {
+     int64 iUserID = 1;             // 玩家id
+     string sNickName = 2;          // 玩家名
+}
+
+// 玩家头像信息(包含玩家id, 玩家名, 头像, 头像框, 旗帜id的)
+message msg_player_face {
+     int64 iUserID = 1;             // 玩家id
+     string sNickName = 2;          // 玩家名
+     string sAvatar = 3;            // 头像
+     int32 iAvatarBoxID = 4;        // 头像框id
+     int32 iFlagID = 5;             // 旗帜id
+    optional int32 iCertificateType = 6;    // 认证类型
+    optional string sCertificateCont = 7;   // 认证内容
+    optional string sMajorNickName = 8;     // 参赛名称
+}
+
+// 玩家竞赛相关信息
+message msg_player_comp_info {
+     int64 iUserID = 1;         // 玩家id
+     int32 iRegTime = 2;        // 玩家注册时间
+     int32 iRecoverNum = 3;     // 玩家累计复原魔方成功次数
+     msg_player_time_trial mTimeTrial = 4;  // 玩家计时赛信息
+     msg_player_comp_multi mCompMulti = 5;  // 玩家多人速拧竞赛信息
+     msg_player_comp_qualifier mCompQualifier = 6;  // 玩家排位赛信息
+     msg_player_comp_multi_team mCompTeamInfo = 7;  // 玩家速拧组队赛信息
+}
+
+// 玩家成就相关信息
+message msg_player_achieve_info {
+     int64 iUserID = 1;       // 玩家id
+     int32 iAchieveLev = 2;   // 玩家成就等级
+     int32 iPopular = 3;      // 人气值
+     int32 iLike = 4;         // 点赞数
+}
+
+// 荣誉展示数据
+message msg_player_honor_wall {
+     int32 iAgeDay = 1; // 魔友生涯
+     int32 iGameNum = 2; // 比赛场次（包括DNF）
+     int32 iLike = 3; // 对战被赞次数
+     int32 iCubeNum = 4; // 魔方数量
+}
+
+// 玩家多人速拧竞赛信息
+message msg_player_comp_multi {
+     int32 iEnterNum = 1;       // 累计参与次数
+     int32 iFinishNum = 2;      // 完成次数
+     int32 iAvg = 3;            // 最近100场有效成绩平均
+}
+
+// 多人速拧赛比赛数据
+message msg_player_multi_quick_twist_comp_statistics {
+     int32 iBest = 1;           // 最佳单次
+     int32 iAvg = 2;            // 平均成绩
+     int32 iChampionNum = 3;    // 全场第一次数
+}
+
+// 玩家速拧组队赛竞赛信息
+message msg_player_comp_multi_team {
+     int32 iEnterNum = 1;       // 累计参与次数
+     int32 iFinishNum = 2;      // 完成次数
+     int32 iAvg = 3;            // 最近100场有效成绩平均
+}
+
+// 组队速拧赛比赛数据
+message msg_player_team_quick_twist_comp_statistics {
+     int32 iBest = 1;           // 最佳单次
+     int32 iAvg = 2;            // 平均成绩
+     int32 iWinPercent = 3;     // 胜率
+}
+
+// 玩家计时赛信息
+message msg_player_time_trial {
+     int32 iUsedNum = 1;        // 累计参与次数
+     int32 iFinishNum = 2;      // 完成次数
+     int32 iAvg = 3;            // 最近100场有效成绩平均
+}
+
+// 计时赛比赛数据
+message msg_player_time_trial_comp_statistics {
+     int32 iBest = 1;           // 最佳单次
+     int32 iAvg = 2;            // 平均成绩
+     int32 iRecentRank = 3;     // 近期排名
+    optional int32 iSub = 4;            // sub值（xx秒以下）
+    optional sub_icon_style eSubIconStyle = 5; // sub图标的展示样式
+}
+
+enum sub_icon_style {
+    gold    = 0;    // 金色sub图标
+    silver    = 1;    // 银色sub图标
+    copper   = 2;    // 铜色sub图标
+    common    = 3;    // 普通sub图标
+}
+
+// 玩家排位赛信息
+message msg_player_comp_qualifier {
+     int32 iCup = 1;            // 本赛季奖杯数
+     float fTps = 2;            // tps
+     int32 iTurn = 3;           // 步数
+     int32 iSmoothIndex = 4;    // 流畅指数
+}
+
+// 排位赛比赛数据
+message msg_player_qualifier_comp_statistics {
+     int32 iCup = 1;                // 当前赛季最高奖杯数
+     int32 iDuration = 2;             // 平均成绩
+     int32 iTotal = 3;              // 所有赛季的总场数（包括 DNF）
+}
+
+// 魔方角度
+message msg_cube_angle {
+     int32 x = 1;         // x
+     int32 y = 2;         // y
+     int32 z = 3;         // z
+}
+
+// 魔方转动步骤
+message msg_cube_move {
+    optional msg_cube_angle mAngle  = 1;    // 角度
+    optional string sMove           = 2;    // 操作的公式
+    optional int32 iInterval        = 3;    // 时间间隔, 每步与上一步的时间间隔
+    optional int32 iStep            = 4;    // 硬件计步器
+    optional int32 iRotate          = 5;    // 2次move之间的转体数
+    optional int32 iModify          = 6;    // 0: 原始数据, 1: 玩家自己改动的数据
+}
+
+// 魔方状态
+message msg_cube_state {
+    repeated int32 iStateL = 1;     // 状态列表
+    repeated int32 iUpFrontL = 2;   // 默认朝向
+}
+
+// 解法步骤
+message msg_cube_solution_order {
+     int32 iOrder = 1;      // 解法类型
+     int32 iStartStep = 2;  // 硬件计步器 开始
+     int32 iOverStep  = 3;  // 硬件计步器 结束
+}
+
+message msg_cube_solution {
+     int32 iType = 1;     // 解法类型
+    repeated msg_cube_solution_order mOrderL = 2;
+}
+
+// 魔方复盘录像信息
+message msg_cube_review {
+    repeated msg_cube_move mUserMoveL = 1;      // 玩家操作列表(顺序列表) (原来的字段为  msg_cube_state mCubeState = 1;     // 魔方初始状态)
+    repeated msg_cube_move mMoveL = 2;          // 操作列表(顺序列表)
+    repeated msg_cube_solution mSolutionL = 3;  // 解法分析
+}
+
+// 魔方展示信息
+message msg_cube_show {
+     int32 mode_id = 1;         // 魔方id
+    optional int32 paster = 2;          // 魔方贴纸
+    optional int32 effects = 3;         // 魔方特效
+    optional int32 facade = 4;          // 魔方外观
+    optional int32 iEnableEffect = 5;   // 是否开启展示特效（0: 不开启，1:开启）
+}
+
+// 分析信息
+message msg_solution_analyse {
+     int32 iType = 1;           // 解法类型 1: CFOP; 2：LBL 3: Roux
+     int32 iOrder = 2;          // 所处步骤 CFOP(0:ALL 1:CROSS 2:F2L 21:F2L-1 22:F2L-2 23:F2L-3 24:F2L-4 3:OLL 4:PLL )
+     int32 iTotalDuration = 3;  // 总耗时: 毫秒
+     int32 iDuration = 4;       // 耗时: 毫秒
+     int32 iTurn = 5;           // 步数
+     float fTps = 6;            // TPS
+     int32 iRotate = 7;         // 转体数
+     int32 iSmoothIndex = 8;    // 流畅指数
+     int32 iObserveTime = 9;    // 观察时间
+     int32 iAdjustTime = 10;    // 调整时间
+     int32 iExecuteTime = 11;   // 执行时间
+     int32 iAUFTime = 12;       // AUF时间
+     int32 iStartStep = 13;     // 开始步骤索引
+     int32 iOverStep = 14;      // 结束步骤索引
+}
+
+// 魔方通用数据
+message msg_cube_common_data {
+    optional string sCubeModel      = 1;   // 魔方型号
+    optional int32 iDuration        = 2;   // 用时时长: 毫秒
+    optional int32 iTurn            = 3;   // 步数
+    optional int32 iRotate          = 4;   // 转体
+    optional int32 iSmoothIndex     = 5;   // 流畅指数
+    optional string sScramble       = 6;   // 打乱公式字符串 (U B2 D' ...)
+    optional string sReduction      = 7;   // 还原公式(绝对公式)
+    optional msg_cube_review mReview = 8;           // 魔方复盘录像信息
+    repeated msg_solution_analyse mSolutionL = 9;   // 解法分析数据列表
+    optional int32 iVersion = 10;                   // 复盘分析版本号
+    optional int32 iSolutionType = 11;              // 解法类型 1: CFOP; 2：LBL 3: Roux
+    optional int32 iDownColor = 12;                 // 复原底色（0-5）
+    optional int32 iOLLIndex = 13;                  // OLL解法序号
+    optional int32 iPLLIndex = 14;                  // PLL解法序号
+}
+
+// 镜像信息
+message msg_mirror_image {
+    optional int32 iDuration        = 1;   // 用时时长: 毫秒
+    optional string sScramble       = 2;   // 打乱公式字符串 (U B2 D' ...)
+    optional string sReduction      = 3;   // 还原公式(绝对公式)
+    optional msg_cube_review mReview = 4;  // 复盘信息
+}
+
+//　裁判信息
+message msg_referee_info{
+     int64 iUserID = 1;         // 玩家id
+     bool bOnline = 2;          // 是否在线
+}
+
+// 成绩计算方式
+enum e_grade_calc{
+    default1 = 0;        // 默认结算(比如一回合)
+    bo3 = 1;            // 3回合最佳
+    ao5 = 2;            // 5回合去头尾取平均
+    bao5 = 3;           // 5回合最快3次取平均
+    mo3 = 4;            // 3回合取平均
+}
+
+// 房间玩家信息
+message msg_room_player_info {
+     int64 iUserID = 1;                 // 玩家id
+     string sNickName = 2;              // 玩家名
+     string sAvatar = 3;                // 头像
+     int32 iAvatarBoxID = 4;            // 头像框id
+     int32 iFlagID = 5;                 // 旗帜id
+     int32 iStatus = 6;                 // 状态: 0:离线, 1.断线重连中, 2.正常在线
+    optional int32 iCompID = 7;                // 所在竞赛id
+    repeated msg_equipment mEquipments = 8;    // 设备列表
+    optional int32 iAccType = 9;               // 账号类型(0: 普通账号, 1: 内部gm权限账号 2:AI机器人号)
+    optional int32 iCertificateType = 10;       // 认证类型
+    optional int32 iRoomID = 11;                // 所在房间id
+	  optional string sMajorNickName = 12;		//赛事专区名字
+    optional int32 iRecoverEffectsID = 13;       // 复原特效id
+    optional int32 iCup = 14;                   //排位赛杯数
+}
+
+// 玩家基础信息
+message msg_player_team_info {
+     int64 iUserID = 1;                 // 玩家id
+     string sNickName = 2;              // 玩家名
+     string sAvatar = 3;                // 头像
+     int32 iAvatarBoxID = 4;            // 头像框id
+    optional int32 iLogoutTime  = 5;           // 下线时间, 如果玩家正常在线, 则为0
+    optional int32 iCup = 6;                   // 本赛季排位赛奖杯数
+    optional int32 weekLiveness = 7;           // 周活跃
+	optional int32 hisLiveness = 8;            // 历史活跃
+	optional int32 lastWeekMatch = 9;          // 上一周场次
+	optional int32 seasonMatch = 10;           // 赛季场次
+	optional int32 teamPoint = 11;             // 积分
+	optional int32 qualifyLv = 12;             // 战队赛段位
+	optional int32 sportsVal = 13;             // 竞技值
+	optional int32 fightVal = 14;              // 战力值
+}
+
+// 个人基础信息
+message msg_player_page {
+	 int64 iUserID = 1;                 // 玩家id
+     string sNickName = 2;              // 用户名称
+    optional string sAvatar = 3;                // 用户头像
+    optional int32 iAvatarBoxID = 4;            // 头像框id
+    optional int32 iFlagID = 5;                 // 国旗id
+    optional string sSignature = 6;             // 个性签名
+	optional int32 iStatus = 7;                 // 状态: 0:离线, 1.断线重连中, 2.正常在线
+	optional string sCity = 8;                  // 城市
+	optional int32 iTeamID = 9;                 // 战队ID
+    optional string sTeamName = 10;             // 战队名称
+	optional int32 iCertificateType = 11;       // 认证类型
+	optional string sCertificateCont = 12;      // 认证内容
+}
+
+// 玩家玩法统计信息
+message msg_player_statistics {
+     int32 iEnterNum = 1;        // 累计参与次数
+     int32 iFinishNum = 2;      // 完成次数
+     int32 iAvg = 3;            // 最近100场有效成绩平均
+}
+
+message msg_five_dimensional_map {
+    optional int32 iDuration = 1;        // 时间
+    optional int32 iSummary = 2;      // 综合
+    optional int32 iTps = 3;            // TPS
+    optional int32 iTurn = 4;            // 步数
+    optional int32 iSmooth = 5;            // 流畅度
+}
+
+// 是否 MVP
+enum e_is_mvp {
+    no   = 0;    // 否
+    yes    = 1;    // 是
+}
+
+// 排行榜元素通用信息(双端根据枚举类型制定元素位数,每个位数代表什么数据)
+message msg_ranker{
+	 int64 id = 1;  			//数据的唯一id(一般是玩家uuid)
+	 int32 rank = 2;  			//排名
+    repeated string strs = 3;           // 通用信息制定,参见枚举定义e_rank_type
+}
+
+enum e_rank_type {
+    empty = 0;
+    time_trial = 1;     // 个人计时赛  名称-成绩-tps-步数-头像-旗帜
+    standard_clock = 2; // 标准计时器次数
+    cube_clone = 3;     // 克隆赛
+    qualifier = 4;      // 排位赛 头像-旗帜-名称-奖杯
+	match_event = 5;	// 赛事专区 头像-旗帜-名称-成绩-tps-步数
+	team_liveness_season = 6;	// 战队活跃赛季榜 战队图标-战队名-活跃度-评级-成员-最大成员
+	team_liveness_week = 7;	// 战队活跃周榜 战队图标-战队名-活跃度-评级-成员-最大成员
+	team_person = 8;	// 战队个人榜 头像-头像框-名称-段位-战力-战队名
+	team_point_season = 9;	// 战队积分赛季榜 战队图标-战队名-积分
+	team_point_week = 10;	// 战队积分周榜 战队图标-战队名-积分
+}
+

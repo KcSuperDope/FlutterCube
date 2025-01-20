@@ -1,0 +1,12 @@
+module iOSDFULibrary {
+  umbrella header "iOSDFULibrary-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+
+module iOSDFULibrary.Swift {
+  header "/Users/lilinjun/cubestation/build/ios/Debug-iphonesimulator/iOSDFULibrary/Swift Compatibility Header/iOSDFULibrary-Swift.h"
+  requires objc
+}

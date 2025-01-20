@@ -1,0 +1,34 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/lilinjun/cubestation/build/fluttertoast/intermediates/incremental/mergeReleaseResources/merged.dir/values-ur/values-ur.xml",
+            "map": [
+                {
+                    "source": "/Users/lilinjun/.gradle/caches/transforms-3/e0c635df2d9a05704b5b1bd98112cf6f/transformed/core-1.6.0/res/values-ur/values-ur.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/lilinjun/cubestation/build/fluttertoast/intermediates/merged_res/release/values-ur/values-ur.xml",
+            "map": [
+                {
+                    "source": "/Users/lilinjun/.gradle/caches/transforms-3/e0c635df2d9a05704b5b1bd98112cf6f/transformed/core-1.6.0/res/values-ur/values-ur.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        }
+    ]
+}

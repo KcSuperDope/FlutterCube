@@ -1,0 +1,74 @@
+PODS:
+  - app_settings (5.1.1):
+    - Flutter
+  - Flutter (1.0.0)
+  - flutter_blue_plus (0.0.1):
+    - Flutter
+  - fluttertoast (0.0.2):
+    - Flutter
+    - Toast
+  - iOSDFULibrary (4.13.0):
+    - ZIPFoundation (= 0.9.11)
+  - nordic_dfu (1.0.0):
+    - Flutter
+    - iOSDFULibrary (~> 4.13.0)
+  - path_provider_foundation (0.0.1):
+    - Flutter
+    - FlutterMacOS
+  - Toast (4.0.0)
+  - url_launcher_ios (0.0.1):
+    - Flutter
+  - wakelock (0.0.1):
+    - Flutter
+  - ZIPFoundation (0.9.11)
+
+DEPENDENCIES:
+  - app_settings (from `.symlinks/plugins/app_settings/ios`)
+  - Flutter (from `Flutter`)
+  - flutter_blue_plus (from `.symlinks/plugins/flutter_blue_plus/ios`)
+  - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
+  - nordic_dfu (from `.symlinks/plugins/nordic_dfu/ios`)
+  - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
+  - url_launcher_ios (from `.symlinks/plugins/url_launcher_ios/ios`)
+  - wakelock (from `.symlinks/plugins/wakelock/ios`)
+
+SPEC REPOS:
+  trunk:
+    - iOSDFULibrary
+    - Toast
+    - ZIPFoundation
+
+EXTERNAL SOURCES:
+  app_settings:
+    :path: ".symlinks/plugins/app_settings/ios"
+  Flutter:
+    :path: Flutter
+  flutter_blue_plus:
+    :path: ".symlinks/plugins/flutter_blue_plus/ios"
+  fluttertoast:
+    :path: ".symlinks/plugins/fluttertoast/ios"
+  nordic_dfu:
+    :path: ".symlinks/plugins/nordic_dfu/ios"
+  path_provider_foundation:
+    :path: ".symlinks/plugins/path_provider_foundation/darwin"
+  url_launcher_ios:
+    :path: ".symlinks/plugins/url_launcher_ios/ios"
+  wakelock:
+    :path: ".symlinks/plugins/wakelock/ios"
+
+SPEC CHECKSUMS:
+  app_settings: 017320c6a680cdc94c799949d95b84cb69389ebc
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  flutter_blue_plus: 4837da7d00cf5d441fdd6635b3a57f936778ea96
+  fluttertoast: fafc4fa4d01a6a9e4f772ecd190ffa525e9e2d9c
+  iOSDFULibrary: 3b9de67ed4bfb901b5f09c2fea843f65e152612d
+  nordic_dfu: 7021f855ea18b9d29842a849c488c1eb8c25487e
+  path_provider_foundation: 29f094ae23ebbca9d3d0cec13889cd9060c0e943
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+  url_launcher_ios: 68d46cc9766d0c41dbdc884310529557e3cd7a86
+  wakelock: d0fc7c864128eac40eba1617cb5264d9c940b46f
+  ZIPFoundation: b1f0de4eed33e74a676f76e12559ab6b75990197
+
+PODFILE CHECKSUM: 663715e941f9adb426e33bf9376914006f9ea95b
+
+COCOAPODS: 1.12.1

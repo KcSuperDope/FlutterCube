@@ -1,0 +1,12 @@
+module nordic_dfu {
+  umbrella header "nordic_dfu-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+
+module nordic_dfu.Swift {
+  header "/Users/lilinjun/cubestation/build/ios/Debug-iphonesimulator/nordic_dfu/Swift Compatibility Header/nordic_dfu-Swift.h"
+  requires objc
+}
